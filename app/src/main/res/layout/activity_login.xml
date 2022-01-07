@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:context=".view.LoginActivity">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="338dp"
+            android:layout_height="55dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/name"
+                android:hint="@string/name" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="338dp"
+            android:layout_height="55dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/email"
+                android:hint="@string/email" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="338dp"
+            android:layout_height="55dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:hint="@string/password" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+        <Button
+            android:layout_width="338dp"
+            android:layout_height="55dp"
+            android:id="@+id/saveDetails"
+            android:text="@string/saveDetails"/>
+    </LinearLayout>
+</layout>
