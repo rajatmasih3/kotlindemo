@@ -8,11 +8,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.ipe.demoapp.R
 import com.ipe.demoapp.databinding.ActivityRetrofitBinding
 import com.ipe.demoapp.viewModel.RetrofitViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+
 
 class RetrofitActivity : AppCompatActivity() {
     lateinit var binding : ActivityRetrofitBinding
@@ -24,11 +26,24 @@ class RetrofitActivity : AppCompatActivity() {
 
          binding = DataBindingUtil.setContentView(this,R.layout.activity_retrofit)
         viewModel = ViewModelProvider(this).get(RetrofitViewModel::class.java)
+        viewModel.getData()
 
         binding.btn.text = viewModel.count.toString()
         binding.btn.setOnClickListener {
-            viewModel.increaseValue()
-            binding.btn.text = viewModel.count.toString()
+           /* viewModel.increaseValue()
+            binding.btn.text = viewModel.count.toString()*/
+
+            MaterialAlertDialogBuilder(this)
+                .setMessage(resources.getString(R.string.app_name))
+                .setNegativeButton("OKAY") { dialog, which ->
+                    // Respond to negative button press
+                    dialog.dismiss()
+                }
+                .setPositiveButton("CANCEL") { dialog, which ->
+                    // Respond to positive button press
+                    dialog.dismiss()
+                }
+                .show()
         }
 
          viewModel._posts().observe(this)
